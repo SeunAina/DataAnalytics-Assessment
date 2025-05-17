@@ -69,6 +69,5 @@
 **Challenge**:
 
 * Combining counts and averages in a single query while ensuring correct handling of customers with zero tenure.
-* Ensuring readability and commenting complex calculations like the CLV formula.
-
+  
 ---
