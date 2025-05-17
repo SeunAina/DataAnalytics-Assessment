@@ -2,8 +2,8 @@
 
 SELECT 
     u.id AS owner_id,
-    COUNT(DISTINCT CASE WHEN p.is_regular_savings > 0 OR p.is_a_goal > 0 THEN p.id END) AS savings_count, # Filtering distinct customer regular savings account
-    COUNT(DISTINCT CASE WHEN p.is_fixed_investment > 0 OR p.is_managed_portfolio > 0 THEN p.id END) AS investment_count, # Filtering distinct customer investment account
+    COUNT(DISTINCT CASE WHEN p.is_regular_savings = 1 OR p.is_a_goal = 1 THEN p.id END) AS savings_count, # Filtering distinct customer regular savings account
+    COUNT(DISTINCT CASE WHEN p.is_fixed_investment = 1 OR p.is_managed_portfolio = 1 THEN p.id END) AS investment_count, # Filtering distinct customer investment account
     SUM(s.confirmed_amount) AS total_deposits # Total deposit per customer
 FROM users_customuser u
 JOIN savings_savingsaccount s ON u.id = s.owner_id
