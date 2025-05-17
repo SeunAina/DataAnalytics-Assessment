@@ -16,8 +16,3 @@ HAVING
     COUNT(DISTINCT CASE WHEN p.is_fixed_investment = 1 OR p.is_managed_portfolio = 1 THEN p.id END) > 0 # including only users who have at least one investment plan account  plan.
 ORDER BY total_deposits DESC;
 
-
-# N:B
-# A plan is considered an investment plan if: is_fixed_investment > 0 or is_managed_portfolio > 0
-# A plan is considered a savings plan if: is_regular_savings > 0 or is_a_goal > 0
-
